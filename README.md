@@ -24,7 +24,7 @@ For functions of the form $` f(z) = z^n + c `$, the behavior of the sequence $` 
 ## Features
 
 - **Interactivity**: Click to zoom in on areas within the plot to explore the Julia set in greater detail.
-- **Custom Functions**: Users can input their own holomorphic function in the form $` f(z) = z^n + c `$ to generate unique Julia sets.
+- **Custom Functions**: Users can input their own holomorphic function in the form $` f(z) = z^n + c `$, $` f(z) = e^z + c`$, and the usual trigonometric functions of the complex variable $`z`$ to generate unique Julia sets.
 - **Optimized Performance**: Computation is accelerated using Numba, a Just-In-Time compiler for Python, facilitating real-time exploration.
 
 ## How to Use
