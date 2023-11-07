@@ -54,6 +54,7 @@ f(z, c) = z^2 + c
 In the above case we choose the famous Mandelbrot set. A plot will then appear, showing the Julia set for your function. Click to zoom and investigate the fractal's complexity. See below for the given example: 
 
 ![Mandelbrot](https://github.com/edtireli/JuliaSet-Holomorphic-dynamics/assets/129996957/83191e32-8aa8-4d11-8615-4db257a887a8)
+and see below for an example of a region of the Mandelbrot set above - can you find it on your own?
 ![Mandelbrot_1](https://github.com/edtireli/JuliaSet-Holomorphic-dynamics/assets/129996957/fa7a2ba0-66ba-4f20-8297-9344d34e1fcb)
 
 ## Contributing
