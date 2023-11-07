@@ -1,12 +1,11 @@
 # Interactive Julia Set Explorer
-
+![New Project (3)](https://github.com/edtireli/JuliaSet-Holomorphic-dynamics/assets/129996957/b9002326-9db7-4d6a-ba60-02a7296967cc)
 This project provides an interactive visualization tool for exploring the Julia set, a complex fractal that emerges from iterating a holomorphic function over the complex plane. Users can dynamically zoom into regions of interest by clicking on the plot, revealing the fractal's intricate structure at various scales.
 
 Author: Edis Devin Tireli, M.Sc, Ph.D. student
 
 Affiliation: [Copenhagen University](https://www.ku.dk/english/)
 ## Mathematical Background
-
 ### Holomorphic Functions
 
 In complex analysis, a holomorphic function is one that is complex differentiable at every point in its domain. More formally, a function $` f: \mathbb{C} 
@@ -52,7 +51,9 @@ You will be prompted to enter a holomorphic function. Provide it in some usual f
 Enter a function of z and c, like 'z^2 + c':
 f(z, c) = z^2 + c
 ```
-In the above case we choose the famous Mandelbrot set. A plot will then appear, showing the Julia set for your function. Click to zoom and investigate the fractal's complexity.
+In the above case we choose the famous Mandelbrot set. A plot will then appear, showing the Julia set for your function. Click to zoom and investigate the fractal's complexity. See below for the given example: 
+
+![Mandelbrot](https://github.com/edtireli/JuliaSet-Holomorphic-dynamics/assets/129996957/83191e32-8aa8-4d11-8615-4db257a887a8)
 
 ## Contributing
 
