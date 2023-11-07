@@ -6,21 +6,34 @@ from numba import jit
 def get_user_function():
     print("Enter a function of z and c. For example, 'z^2 + c':")
     user_function = input("f(z, c) = ").strip()
+
+    # Replace caret symbols with Python's exponentiation operator
     user_function_numeric = user_function.replace('^', '**')
-    
-    # Set initial bounds based on the function entered
-    if user_function_numeric == 'z**2 + c' or user_function_numeric == 'z**2+c' or user_function_numeric == 'z**2+ c' or user_function_numeric == 'z**2 +c':
+
+    # Check if the user entered the Mandelbrot set function, which uses specific initial bounds
+    mandelbrot_check = user_function_numeric.replace(' ', '').replace('np.', '')
+    if 'z**2+c' in mandelbrot_check:
         initial_bounds = (-2-1j, 1+1j)
     else:
         initial_bounds = (-2-1j, 2+1j)
-    
-    return user_function, user_function_numeric, initial_bounds
+
+    # Prepare the function text to be compiled
+    function_text = f"def holomorphic(z, c):\n    return {user_function_numeric}"
+
+    # Create a local dictionary to exec the function definition
+    local_dict = {}
+    # Include numpy functions that might be used in the user-defined function
+    numpy_functions = {'np': np, 'exp': np.exp, 'sin': np.sin, 'cos': np.cos}
+    exec(function_text, numpy_functions, local_dict)
+
+    # Extract the function from the local dictionary
+    holomorphic_func = jit(nopython=True)(local_dict['holomorphic'])
+
+    return user_function, user_function_numeric, initial_bounds, holomorphic_func
+
 
 # Prompt user for the function, convert it for computation, and get initial bounds
-user_input, user_function_numeric, initial_bounds = get_user_function()
-
-# Dynamically create the holomorphic function from user input
-holomorphic = eval(f"jit(nopython=True)(lambda z, c: ({user_function_numeric}))")
+user_input, user_function_numeric, initial_bounds, holomorphic = get_user_function()
 
 # Function to compute the Julia set, optimized with Numba
 @jit(nopython=True)
