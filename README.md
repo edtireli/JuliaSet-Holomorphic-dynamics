@@ -45,7 +45,7 @@ Execute the script `julia_explorer.py` from the command line:
 python julia_explorer.py
 ```
 
-You will be prompted to enter a holomorphic function. Provide it in some usual form, e.g. `z^n + c`, or `sin(z)` or `exp(z)`:
+You will be prompted to enter a holomorphic function. Provide it in some usual form, e.g. `z^n + c`, or `sin(z) + c` or `exp(z) + c` (or a mix):
 
 ```plaintext
 Enter a function of z and c, like 'z^2 + c':
